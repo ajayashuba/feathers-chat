@@ -19,7 +19,7 @@ const channels = require('./channels');
 const authentication = require('./authentication');
 
 const app = express(feathers());
-
+console.log(services.toString())
 // Load app configuration
 app.configure(configuration());
 // Enable CORS, security, compression, favicon and body parsing

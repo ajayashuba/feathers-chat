@@ -16,7 +16,7 @@ module.exports = function (app) {
 
   // Initialize our service with any options it requires
   app.use('/messages', createService(options));
-  app.service('messages').emit('myevent',{a:'klahkjhg'})
+  app.service('/messages').emit('myevent',{a:'klahkjhg'})
 
   // Get our initialized service so that we can register hooks and filters
   const service = app.service('messages');
