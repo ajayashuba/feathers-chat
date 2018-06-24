@@ -5,10 +5,9 @@ setTimeout(()=>{console.log('emitted');this.emit('status',{kabua:'abcd'})},2000)
   }}
       
   module.exports=function(app){
-        app.events = [ 'status' ]
-
+        this.events = ['status']
     
-      app.use('/ok', myService);
+app.use('/ok', myService);
 
     
   }
