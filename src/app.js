@@ -18,12 +18,14 @@ const channels = require('./channels');
 
 const authentication = require('./authentication');
 
+
 const app = express(feathers());
 // Load app configuration
 app.configure(configuration());
 // Enable CORS, security, compression, favicon and body parsing
 app.use(cors());
 app.use(helmet());
+
 app.use(compress());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -48,5 +50,6 @@ app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
+app.service('ok').on('status',a=>console.log(a))
 
 module.exports = app;
