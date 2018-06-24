@@ -11,6 +11,7 @@ module.exports = function (app) {
     name: 'messages',
     Model,
     paginate,
+    events:['abcd']
   };
 
   // Initialize our service with any options it requires
@@ -19,5 +20,10 @@ module.exports = function (app) {
   // Get our initialized service so that we can register hooks and filters
   const service = app.service('messages');
 
-  service.hooks(hooks);
+  
+  setTimeout( () => {
+    console.info('SEND MYEVENT');    
+    
+    service.emit('abcd',{a:'klahkjhg'});
+  }, 4000); 
 };
