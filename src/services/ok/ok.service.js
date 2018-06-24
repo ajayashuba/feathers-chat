@@ -1,6 +1,6 @@
 const myService = {
   find(params) {
-this.emit('status',{kabua:'abcd'});
+setTimeout(()=>{console.log('emitted');this.emit('status',{kabua:'abcd'})},2000)
     return Promise.resolve(344);
   }}
       
