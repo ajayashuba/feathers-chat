@@ -25,5 +25,5 @@ module.exports = function (app) {
     console.info('SEND MYEVENT');    
     
     service.emit('abcd',{a:'klahkjhg'});
-  }, 4000); 
+  }, 1000); 
 };
